@@ -35,13 +35,37 @@ do
         Content = "This is a paragraph.\nSecond line!"
     })
 
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+-- Assume Tabs and Options are already defined
 
-    Toggle:OnChanged(function()
-        print("Toggle changed:", Options.MyToggle.Value)
-    end)
+local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
-    Options.MyToggle:SetValue(false)
+Toggle:OnChanged(function()
+    print("Toggle changed:", Options.MyToggle.Value)
+end)
+
+Options.MyToggle:SetValue(false)
+
+-- Function to check player's level and set variables
+local function CheckLevel()
+    local Lv = game:GetService("Players").LocalPlayer.Data.Level.Value
+
+    if Old_World then
+        if Lv == 1 or Lv <= 9 or SelectMonster == "Bandit [Lv. 5]" then
+            -- Set your variables here based on the player's level
+            Ms = "Bandit [Lv. 5]"
+            NameQuest = "BanditQuest1"
+            QuestLv = 1
+            NameMon = "Bandit"
+            CFrameQ = CFrame.new(1060.9383544922, 16.455066680908, 1547.7841796875)
+            CFrameMon = CFrame.new(1038.5533447266, 41.296249389648, 1576.5098876953)
+        end
+        -- Add more conditions as needed
+    end
+end
+
+-- Call the function to check the level
+CheckLevel()
+
 
     Tabs.Main:AddButton({
         Title = "Button",

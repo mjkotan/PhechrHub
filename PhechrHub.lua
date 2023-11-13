@@ -27,14 +27,7 @@ do
         SubContent = "SubContent", -- Optional
         Duration = 5 -- Set to nil to make the notification not disappear
     })
-
-
-
-    Tabs.Main:AddParagraph({
-        Title = "Paragraph",
-        Content = "This is a paragraph.\nSecond line!"
-    })
-    
+  
     local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "ฟาสม์", Default = false })
 
     Toggle:OnChanged(function()
@@ -43,7 +36,7 @@ do
 
     Options.MyToggle:SetValue(false)
 
-    local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
+    local Dropdown = Tabs.Main:AddDropdown("เลือกหมัด", {
         Title = "Dropdown",
         Values = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen"},
         Multi = false,

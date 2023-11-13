@@ -10,13 +10,10 @@ local Window = Fluent:CreateWindow({
     Acrylic = true,
     Theme = "Aqua",
     MinimizeKey = Enum.KeyCode.LeftControl
-})
-
 local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
-
 
 local Options = Fluent.Options
 
@@ -28,14 +25,13 @@ do
         Duration = 5 -- Set to nil to make the notification not disappear
     })
 
-    ----
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
-    Toggle:OnChanged(function()
-        print("Toggle changed:", Options.MyToggle.Value)
-    end)
 
-    Options.MyToggle:SetValue(false)
+    Tabs.Main:AddParagraph({
+        Title = "Paragraph",
+        Content = "This is a paragraph.\nSecond line!"
+    })
+
 
 
     Tabs.Main:AddButton({
@@ -62,6 +58,18 @@ do
             })
         end
     })
+
+
+
+    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+
+    Toggle:OnChanged(function()
+        print("Toggle changed:", Options.MyToggle.Value)
+    end)
+
+    Options.MyToggle:SetValue(false)
+
+
     
     local Slider = Tabs.Main:AddSlider("Slider", {
         Title = "Slider",

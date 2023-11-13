@@ -34,8 +34,12 @@ do
         Title = "Paragraph",
         Content = "This is a paragraph.\nSecond line!"
     })
+    Tabs.Main:AddParagraph({
+        Title = "Paragraph",
+        Content = "This is a paragraph.\nSecond line!"
+    })
 
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "ฟาสม์", Default = false })
 
     Toggle:OnChanged(function()
         print("Toggle changed:", Options.MyToggle.Value)
@@ -43,32 +47,12 @@ do
 
     Options.MyToggle:SetValue(false)
 
-    Tabs.Main:AddButton({
-        Title = "Button",
-        Description = "Very important button",
-        Callback = function()
-            Window:Dialog({
-                Title = "Title",
-                Content = "This is a dialog",
-                Buttons = {
-                    {
-                        Title = "Confirm",
-                        Callback = function()
-                            print("Confirmed the dialog.")
-                        end
-                    },
-                    {
-                        Title = "Cancel",
-                        Callback = function()
-                            print("Cancelled the dialog.")
-                        end
-                    }
-                }
-            })
-        end
+    local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
+        Title = "Dropdown",
+        Values = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen"},
+        Multi = false,
+        Default = 1,
     })
-
-
 
     local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "คิดไม่ออก", Default = false })
 
@@ -78,26 +62,14 @@ do
 
     Options.MyToggle:SetValue(false)
 
+    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "คิดไม่ออก2", Default = false })
 
-    
-    local Slider = Tabs.Main:AddSlider("Slider", {
-        Title = "Slider",
-        Description = "This is a slider",
-        Default = 2,
-        Min = 0,
-        Max = 5,
-        Rounding = 1,
-        Callback = function(Value)
-            print("Slider was changed:", Value)
-        end
-    })
-
-    Slider:OnChanged(function(Value)
-        print("Slider changed:", Value)
+    Toggle:OnChanged(function()
+        print("Toggle changed:", Options.MyToggle.Value)
     end)
 
-    Slider:SetValue(3)
 
+    Options.MyToggle:SetValue(false) 
 
 
     local Dropdown = Tabs.Main:AddDropdown("Dropdown", {

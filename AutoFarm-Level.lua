@@ -17,8 +17,10 @@ function checkLevel()
         QUESTNUMBER = 1
         SPAWNPOINT = "Default"
         SPAWNPOINTPOS = CFrame.new(973.96197509766, 16.273551940918, 1413.2775878906)
+        combatWithMonsters()  -- เรียกใช้ฟังก์ชันนี้เพื่อทำการต่อสู้กับมอนสเตอร์
     end
 end
+
 
 -- ฟังก์ชันเปลี่ยนที่อยู่ที่ใช้ในการต่อสู้
 function toggleMethod()
@@ -63,6 +65,7 @@ function combatWithMonsters()
         end
     end
 end
+
 
 -- ฟังก์ชันตรวจสอบการเปิด/ปิด Warp
 function toggleWarp()

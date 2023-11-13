@@ -35,7 +35,7 @@ do
         Content = "This is a paragraph.\nSecond line!"
     })
 
-        local Toggle = Tabs.Main:AddToggle("MyToggle1", {Title = "Toggle", Default = false })
+    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
     Toggle:OnChanged(function()
         print("Toggle changed:", Options.MyToggle.Value)
@@ -68,17 +68,6 @@ do
             })
         end
     })
-
-
-
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
-
-    Toggle:OnChanged(function()
-        print("Toggle changed:", Options.MyToggle.Value)
-    end)
-
-    Options.MyToggle:SetValue(false)
-
 
     
     local Slider = Tabs.Main:AddSlider("Slider", {

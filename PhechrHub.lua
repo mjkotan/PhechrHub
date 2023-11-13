@@ -39,9 +39,9 @@ do
 loadstring(game:HttpGet("https://raw.githubusercontent.com/mjkotan/PhechrHub/main/AutoFarm-Level.lua"))();
 
 -- ส่วนที่ 2: สร้าง Toggle ใน GUI
-local Tabs = require(game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("GuiName")) -- แทน "GuiName" ด้วยชื่อ GUI ของคุณ
+local Tabs = require(game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("AutoFarm-Leve")) -- แทน "GuiName" ด้วยชื่อ GUI ของคุณ
 
-local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "ฟามส์", Default = false })
+local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "AutoFarm-Leve", Default = false })
 
 Toggle:OnChanged(function()
     print("Toggle changed:", Toggle.Value)

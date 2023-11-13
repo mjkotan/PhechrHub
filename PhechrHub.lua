@@ -69,7 +69,7 @@ do
 
 
 
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Auto Farm", Default = false })
 
     Toggle:OnChanged(function()
         print("Toggle changed:", Options.MyToggle.Value)

@@ -35,13 +35,36 @@ do
         Content = "This is a paragraph.\nSecond line!"
     })
 
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+function CheckLevel()
+    local Lv = game:GetService("Players").LocalPlayer.Data.Level.Value
+    if Old_World then
+        if Lv == 1 or (Lv >= 1 and Lv <= 9) or SelectMonster == "Bandit [Lv. 5]" then
+            Ms = "Bandit [Lv. 5]"
+            NameQuest = "BanditQuest1"
+            QuestLv = 1
+            NameMon = "Bandit"
+            CFrameQ = CFrame.new(1060.9383544922, 16.455066680908, 1547.7841796875)
+            CFrameMon = CFrame.new(1038.5533447266, 41.296249389648, 1576.5098876953)
 
-    Toggle:OnChanged(function()
-        print("Toggle changed:", Options.MyToggle.Value)
-    end)
+            local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
-    Options.MyToggle:SetValue(false)
+            Toggle:OnChanged(function()
+                print("Toggle changed:", Options.MyToggle.Value)
+            end)
+
+            -- ตรวจสอบระดับและปรับค่าของ Toggle ตามต้องการ
+            if Lv >= 5 then
+                Options.MyToggle:SetValue(true)
+            else
+                Options.MyToggle:SetValue(false)
+            end
+        end
+    end
+end
+
+-- เรียกใช้ฟังก์ชัน CheckLevel()
+CheckLevel()
+
 
     local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
         Title = "Dropdown",

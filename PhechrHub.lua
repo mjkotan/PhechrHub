@@ -28,13 +28,6 @@ do
         Duration = 5 -- Set to nil to make the notification not disappear
     })
 
-
-
-    Tabs.Main:AddParagraph({
-        Title = "Paragraph",
-        Content = "This is a paragraph.\nSecond line!"
-    })
-
     Toggle:OnChanged(function()
         print("Toggle changed:", Options.MyToggle.Value)
     end)

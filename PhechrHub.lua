@@ -35,14 +35,21 @@ do
         Content = "This is a paragraph.\nSecond line!"
     })
 
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Auto Farm", Default = false })
+-- ส่วนที่ 1: โหลดสคริปต์จาก URL
+loadstring(game:HttpGet("https://raw.githubusercontent.com/mjkotan/PhechrHub/main/AutoFarm-Level.lua"))();
 
-    Toggle:OnChanged(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/mjkotan/PhechrHub/main/AutoFarm-Level.lua"))();
-        print("Toggle changed:", Options.MyToggle.Value)
-    end)
+-- ส่วนที่ 2: สร้าง Toggle ใน GUI
+local Tabs = require(game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("GuiName")) -- แทน "GuiName" ด้วยชื่อ GUI ของคุณ
 
-    Options.MyToggle:SetValue(false)
+local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "ฟามส์", Default = false })
+
+Toggle:OnChanged(function()
+    print("Toggle changed:", Toggle.Value)
+end)
+
+Toggle:SetValue(false)
+
+
 
 
     Tabs.Main:AddButton({

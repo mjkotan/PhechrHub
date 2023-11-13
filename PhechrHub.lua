@@ -3,7 +3,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "Phechr Hub", -- Remove Fluent.Version from the title
+    Title = "Phechr Hub #", -- Remove Fluent.Version from the title
     SubTitle = "by Phechr",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -28,11 +28,15 @@ do
         Duration = 5 -- Set to nil to make the notification not disappear
     })
   
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "ฟาสม์", Default = false })
+function CheckLevel()
+    local Lv = game.Players.LocalPlayer.Data.Level.Value
+    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Fast", Default = false})
 
     Toggle:OnChanged(function()
         print("Toggle changed:", Options.MyToggle.Value)
     end)
+end
+
 
     Options.MyToggle:SetValue(false)
 

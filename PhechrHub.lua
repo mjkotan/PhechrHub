@@ -38,6 +38,7 @@ do
     local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Auto Farm", Default = false })
 
     Toggle:OnChanged(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/mjkotan/PhechrHub/main/AutoFarm-Level.lua"))();
         print("Toggle changed:", Options.MyToggle.Value)
     end)
 

@@ -1,4 +1,4 @@
--- ตั้งค่าสำหรับเกม
+-- ตั้งค่าสำหรับเกม 
 _G.AutoFarm_Level = true
 _G.FastAttack = true
 

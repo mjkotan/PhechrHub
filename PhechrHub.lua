@@ -34,14 +34,36 @@ do
         Title = "Paragraph",
         Content = "This is a paragraph.\nSecond line!"
     })
-
+--
+function CheckLevel()
     local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
+    -- เพิ่มฟังก์ชัน CheckLevel
+    local function UpdateToggleStatus()
+        if Options.MyToggle.Value then
+            print("Toggle is ON - Do something here.")
+            -- ทำงานเมื่อ Toggle เปิด
+        else
+            print("Toggle is OFF - Do something else here.")
+            -- ทำงานเมื่อ Toggle ปิด
+        end
+    end
+
+    -- กำหนดฟังก์ชัน OnChanged ของ Toggle
     Toggle:OnChanged(function()
         print("Toggle changed:", Options.MyToggle.Value)
+        UpdateToggleStatus()  -- เรียกใช้ฟังก์ชัน UpdateToggleStatus เมื่อ Toggle มีการเปลี่ยนแปลง
     end)
 
+    -- กำหนดค่าเริ่มต้นของ Toggle
     Options.MyToggle:SetValue(false)
+
+    -- เรียกใช้ฟังก์ชัน UpdateToggleStatus เพื่อตรวจสอบสถานะปัจจุบันของ Toggle
+    UpdateToggleStatus()
+end
+
+
+--
 
     Tabs.Main:AddButton({
         Title = "Button",

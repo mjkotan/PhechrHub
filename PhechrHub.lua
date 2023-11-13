@@ -43,7 +43,6 @@ do
 
     Options.MyToggle:SetValue(false)
 
-
     Tabs.Main:AddButton({
         Title = "Button",
         Description = "Very important button",

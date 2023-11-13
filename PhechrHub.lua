@@ -35,13 +35,34 @@ do
         Content = "This is a paragraph.\nSecond line!"
     })
 
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Auto-Farm", Default = false })
+local player = game.Players.LocalPlayer
+local tabs = require(TabsModule) -- Assuming you have a Tabs module
 
-    Toggle:OnChanged(function()
-        print("Toggle changed:", Options.MyToggle.Value)
-    end)
+-- Create a toggle in the "Main" tab
+local myToggle = tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
-    Options.MyToggle:SetValue(false)
+-- Function to handle toggle change
+local function onToggleChanged()
+    print("Toggle changed:", myToggle.Value)
+end
+
+-- Connect the onToggleChanged function to the toggle's OnChanged event
+myToggle:OnChanged(onToggleChanged)
+
+-- Set the initial value of the toggle to false
+myToggle:SetValue(false)
+
+-- Function to check the player's level
+local function checkLevel()
+    local level = player.Data.Level.Value
+    if Old_World then
+        -- Add your Old_World logic here
+    end
+end
+
+-- Call the checkLevel function
+checkLevel()
+
 
     Tabs.Main:AddButton({
         Title = "Button",

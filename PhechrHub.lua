@@ -46,10 +46,10 @@ function CheckLevel()
             CFrameQ = CFrame.new(1060.9383544922, 16.455066680908, 1547.7841796875)
             CFrameMon = CFrame.new(1038.5533447266, 41.296249389648, 1576.5098876953)
 
-            local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+            local Toggle = Tabs.Main:AddToggle("Auto Farm", {Title = "Auto Farm", Default = false })
 
             Toggle:OnChanged(function()
-                print("Toggle changed:", Options.MyToggle.Value)
+                print("Auto Farm changed:", Options.MyToggle.Value)
             end)
 
             -- ตรวจสอบระดับและปรับค่าของ Toggle ตามต้องการ

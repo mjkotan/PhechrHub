@@ -39,7 +39,6 @@ do
 
     Toggle:OnChanged(function()
         print("Toggle changed:", Options.MyToggle.Value)
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/BaconLords/shit-with-sugar/main/Bacon%20Hub%20Main%20Loader'))()
     end)
 
     Options.MyToggle:SetValue(false)

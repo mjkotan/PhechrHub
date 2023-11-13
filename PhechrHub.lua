@@ -35,6 +35,13 @@ do
         Content = "This is a paragraph.\nSecond line!"
     })
 
+        local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+
+    Toggle:OnChanged(function()
+        print("Toggle changed:", Options.MyToggle.Value)
+    end)
+
+    Options.MyToggle:SetValue(false)
 
 
     Tabs.Main:AddButton({

@@ -28,41 +28,6 @@ do
         Duration = 5 -- Set to nil to make the notification not disappear
     })
 
--- ฟังก์ชัน CheckLevel เพื่อตรวจสอบระดับและตั้งค่าค่าต่าง ๆ
-function CheckLevel()
-    local Lv = game:GetService("Players").LocalPlayer.Data.Level.Value
-
-    if Old_World then
-        if Lv == 1 or Lv <= 9 or SelectMonster == "Bandit [Lv. 5]" then
-            -- Bandit
-            Ms = "Bandit [Lv. 5]"
-            NameQuest = "BanditQuest1"
-            QuestLv = 1
-            NameMon = "Bandit"
-            
-            -- เปิด-ปิด MyToggle
-            MyToggleFunction()
-        end
-    end
-end
-
--- ฟังก์ชัน MyToggleFunction เพื่อเปิด-ปิด MyToggle
-function MyToggleFunction()
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Auto Farm", Default = false })
-
-    Toggle:OnChanged(function()
-        if Options.MyToggle.Value then
-            -- กระทำเมื่อเปิด
-            print("Auto Farm is ON")
-        else
-            -- กระทำเมื่อปิด
-            print("Auto Farm is OFF")
-        end
-    end)
-
-    Options.MyToggle:SetValue(false) -- ตั้งค่าให้เป็น false เริ่มต้น
-end
-
 local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
     Toggle:OnChanged(function()
@@ -94,20 +59,6 @@ local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = fals
 
 
     Options.MyToggle:SetValue(false) 
-
-
-    local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
-        Title = "Dropdown",
-        Values = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen"},
-        Multi = false,
-        Default = 1,
-    })
-
-    Dropdown:SetValue("four")
-
-    Dropdown:OnChanged(function(Value)
-        print("Dropdown changed:", Value)
-    end)
 
 -- Addons:
 -- SaveManager (Allows you to have a configuration system)

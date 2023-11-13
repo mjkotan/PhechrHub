@@ -42,6 +42,8 @@ do
         print("Toggle changed:", Options.MyToggle.Value)
     end)
 
+    Options.MyToggle:SetValue(false)
+
 
     Tabs.Main:AddButton({
         Title = "Button",

@@ -35,22 +35,14 @@ do
         Content = "This is a paragraph.\nSecond line!"
     })
 
--- ส่วนที่ 1: โหลดสคริปต์จาก URL
-loadstring(game:HttpGet("https://raw.githubusercontent.com/mjkotan/PhechrHub/main/AutoFarm-Level.lua"))();
+    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
--- ส่วนที่ 2: สร้าง Toggle ใน GUI
-local Tabs = require(game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("AutoFarm-Leve")) -- แทน "GuiName" ด้วยชื่อ GUI ของคุณ
+    Toggle:OnChanged(function()
+        print("Toggle changed:", Options.MyToggle.Value)
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/BaconLords/shit-with-sugar/main/Bacon%20Hub%20Main%20Loader'))()
+    end)
 
-local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "AutoFarm-Leve", Default = false })
-
-Toggle:OnChanged(function()
-    print("Toggle changed:", Toggle.Value)
-end)
-
-Toggle:SetValue(false)
-
-
-
+    Options.MyToggle:SetValue(false)
 
     Tabs.Main:AddButton({
         Title = "Button",

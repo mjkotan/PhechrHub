@@ -3,12 +3,12 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "PhechrHub", -- Remove Fluent.Version from the title
+    Title = "Phechr Hub", -- Remove Fluent.Version from the title
     SubTitle = "by Phechr",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
     Acrylic = true,
-    Theme = "Dark",
+    Theme = "Aqua",
     MinimizeKey = Enum.KeyCode.LeftControl
 })
 

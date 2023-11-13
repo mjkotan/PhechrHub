@@ -34,11 +34,7 @@ do
         Title = "Paragraph",
         Content = "This is a paragraph.\nSecond line!"
     })
-    Tabs.Main:AddParagraph({
-        Title = "Paragraph",
-        Content = "This is a paragraph.\nSecond line!"
-    })
-
+    
     local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "ฟาสม์", Default = false })
 
     Toggle:OnChanged(function()

@@ -27,20 +27,16 @@ do
         SubContent = "SubContent", -- Optional
         Duration = 5 -- Set to nil to make the notification not disappear
     })
-  
-function CheckLevel()
-    local Lv = game.Players.LocalPlayer.Data.Level.Value
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Fast", Default = false})
+
+    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Auto Farm", Default = false })
 
     Toggle:OnChanged(function()
         print("Toggle changed:", Options.MyToggle.Value)
     end)
-end
-
 
     Options.MyToggle:SetValue(false)
 
-    local Dropdown = Tabs.Main:AddDropdown("เลือกหมัด", {
+    local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
         Title = "Dropdown",
         Values = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen"},
         Multi = false,
@@ -63,6 +59,7 @@ end
 
 
     Options.MyToggle:SetValue(false) 
+
 
 
     local Dropdown = Tabs.Main:AddDropdown("Dropdown", {

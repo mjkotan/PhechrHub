@@ -10,6 +10,9 @@ local Window = Fluent:CreateWindow({
     Acrylic = true,
     Theme = "Aqua",
     MinimizeKey = Enum.KeyCode.LeftControl
+})
+
+--Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
 local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })

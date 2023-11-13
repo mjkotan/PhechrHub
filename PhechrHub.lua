@@ -36,10 +36,28 @@ do
     })
 
     local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
-
+    local Players = game:GetService("Players")
+    function CheckLevel()
+    local Lv = Players.LocalPlayer.Data.Level.Value
     Toggle:OnChanged(function()
-        print("Toggle changed:", Options.MyToggle.Value)
-    end)
+if Old_World then
+        if Lv == 1 or (Lv >= 1 and Lv <= 9) or SelectMonster == "Bandit [Lv. 5]" then
+            -- Bandit
+            local Ms = "Bandit [Lv. 5]"
+            local NameQuest = "BanditQuest1"
+            local QuestLv = 1
+            local NameMon = "Bandit"
+            local CFrameQ = CFrame.new(1060.9383544922, 16.455066680908, 1547.7841796875)
+            local CFrameMon = CFrame.new(1038.5533447266, 41.296249389648, 1576.5098876953)
+
+            -- Assuming Toggle is a BoolValue in the Options object
+            local Toggle = Options:WaitForChild("Toggle")
+            Toggle:GetPropertyChangedSignal("Value"):Connect(function()
+                print("Toggle changed:", Toggle.Value)
+            end)
+        end
+    end
+end
 
     Options.MyToggle:SetValue(false)
 

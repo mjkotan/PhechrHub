@@ -1,13 +1,25 @@
-		function CheckLevel()
-			local Lv = game:GetService("Players").LocalPlayer.Data.Level.Value
-			if Old_World then
-				if Lv == 1 or Lv <= 9 or SelectMonster == "Bandit [Lv. 5]" then -- Bandit
-					Ms = "Bandit [Lv. 5]"
-					NameQuest = "BanditQuest1"
-					QuestLv = 1
-					NameMon = "Bandit"
-					CFrameQ = CFrame.new(1060.9383544922, 16.455066680908, 1547.7841796875)
-					CFrameMon = CFrame.new(1038.5533447266, 41.296249389648, 1576.5098876953)
+_G.AutoFarm_Level = true
+_G.FastAttack = true
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+function checklevel()
+    local Level = game:GetService("Players").LocalPlayer.Data.Level.Value
+    if Level == 1 or Level <= 9 then
+        MON = "Bandit [Lv. 5]"
+        QUESTTITLE = "Bandit"
+        QUESTPOS = CFrame.new(1060.0158691406, 16.424287796021, 1547.9769287109)
+        MONPOS = CFrame.new(1148.8698730469, 16.432844161987, 1630.5396728516)
+        QUESTNAME = "BanditQuest1"
+        QUESTNUMBER = 1
+        SPAWNPOINT = "Default"
+        SPAWNPOINTPOS = CFrame.new(973.96197509766, 16.273551940918, 1413.2775878906)
     end
 end
 Method = CFrame.new(0,25,0)
@@ -23,7 +35,7 @@ spawn(function()
        end
     end
 end)
-
+ 
 spawn(function()
    while wait() do
        if _G.WARP then
@@ -129,4 +141,3 @@ spawn(function()
     end)
 end) 
 end)
-      

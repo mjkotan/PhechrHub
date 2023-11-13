@@ -1,7 +1,14 @@
 _G.AutoFarm_Level = true
 _G.FastAttack = true
  
-
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 function checklevel()
     local Level = game:GetService("Players").LocalPlayer.Data.Level.Value
     if Level == 1 or Level <= 9 then
